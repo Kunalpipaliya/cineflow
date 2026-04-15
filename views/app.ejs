@@ -17,146 +17,39 @@
 
     <div class="container">
         <div class="row g-3">
-            <div class="col-12 col-lg-6">
-                <div class="p-2 rounded-3" style="background-color: #334456;">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://m.media-amazon.com/images/I/71eHZFw+GlL._AC_UF894,1000_QL80_.jpg" class="rounded" width="100%">
-                        </div>
-                        <div class="col-8 d-flex flex-column justify-content-evenly">
-                            <h3 class="text-white">Marvel Infinity War</h3>
-                            <div class="d-flex flex-wrap gap-2"><span class="rounded-pill bg-secondary px-2 text-white">action</span><span class="rounded-pill bg-secondary px-2 text-white">adventure</span><span class="rounded-pill bg-secondary px-2 text-white">sci-fi</span><span class="rounded-pill bg-secondary px-2 text-white">fantasy</span></div>
-                            <strong class="text-white">Year: 2018 | Director: Anthony Russo and Joe Russo</strong>
-                            <div class="d-flex gap-3 align-items-center">
-                                <button class="px-3 btn btn-danger rounded">Details</button>
-                                <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
-                                <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
-                                <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
+            <% data.map((item,index)=>{
+                %>
+                <div class="col-12 col-lg-6">
+                    <div class="p-2 rounded-3" style="background-color: #334456;">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="<%= item.image %>" class="rounded" width="100%">
+                            </div>
+                            <div class="col-8 d-flex flex-column justify-content-evenly">
+                                <h3 class="text-white">
+                                    <%= item.title %>
+                                </h3>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <% for(let i=0; i<item.genre.split(",").length; i++){ %>
+                                        <span class="rounded-pill bg-secondary px-2 text-white">
+
+                                            <%= item.genre.split(",")[i]%>
+                                        </span>
+                                        <% } %>
+                                </div>
+                                <strong class="text-white">Year: <%= item.year %> | Director: <%= item.director %>
+                                </strong>
+                                <div class="d-flex gap-3 align-items-center">
+                                    <a class="px-3 btn btn-danger rounded" href="/detail/<%= item.cid %>">Details</a>
+                                    <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
+                                    <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
+                                    <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="p-2 rounded-3" style="background-color: #334456;">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://m.media-amazon.com/images/I/71eHZFw+GlL._AC_UF894,1000_QL80_.jpg" class="rounded" width="100%">
-                        </div>
-                        <div class="col-8 d-flex flex-column justify-content-evenly">
-                            <h3 class="text-white">Marvel Infinity War</h3>
-                            <div class="d-flex flex-wrap gap-2"><span class="rounded-pill bg-secondary px-2 text-white">action</span><span class="rounded-pill bg-secondary px-2 text-white">adventure</span><span class="rounded-pill bg-secondary px-2 text-white">sci-fi</span><span class="rounded-pill bg-secondary px-2 text-white">fantasy</span></div>
-                            <strong class="text-white">Year: 2018 | Director: Anthony Russo and Joe Russo</strong>
-                            <div class="d-flex gap-3 align-items-center">
-                                <button class="px-3 btn btn-danger rounded">Details</button>
-                                <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
-                                <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
-                                <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="p-2 rounded-3" style="background-color: #334456;">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://m.media-amazon.com/images/I/71eHZFw+GlL._AC_UF894,1000_QL80_.jpg" class="rounded" width="100%">
-                        </div>
-                        <div class="col-8 d-flex flex-column justify-content-evenly">
-                            <h3 class="text-white">Marvel Infinity War</h3>
-                            <div class="d-flex flex-wrap gap-2"><span class="rounded-pill bg-secondary px-2 text-white">action</span><span class="rounded-pill bg-secondary px-2 text-white">adventure</span><span class="rounded-pill bg-secondary px-2 text-white">sci-fi</span><span class="rounded-pill bg-secondary px-2 text-white">fantasy</span></div>
-                            <strong class="text-white">Year: 2018 | Director: Anthony Russo and Joe Russo</strong>
-                            <div class="d-flex gap-3 align-items-center">
-                                <button class="px-3 btn btn-danger rounded">Details</button>
-                                <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
-                                <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
-                                <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="p-2 rounded-3" style="background-color: #334456;">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://m.media-amazon.com/images/I/71eHZFw+GlL._AC_UF894,1000_QL80_.jpg" class="rounded" width="100%">
-                        </div>
-                        <div class="col-8 d-flex flex-column justify-content-evenly">
-                            <h3 class="text-white">Marvel Infinity War</h3>
-                            <div class="d-flex flex-wrap gap-2"><span class="rounded-pill bg-secondary px-2 text-white">action</span><span class="rounded-pill bg-secondary px-2 text-white">adventure</span><span class="rounded-pill bg-secondary px-2 text-white">sci-fi</span><span class="rounded-pill bg-secondary px-2 text-white">fantasy</span></div>
-                            <strong class="text-white">Year: 2018 | Director: Anthony Russo and Joe Russo</strong>
-                            <div class="d-flex gap-3 align-items-center">
-                                <button class="px-3 btn btn-danger rounded">Details</button>
-                                <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
-                                <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
-                                <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="p-2 rounded-3" style="background-color: #334456;">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://m.media-amazon.com/images/I/71eHZFw+GlL._AC_UF894,1000_QL80_.jpg" class="rounded" width="100%">
-                        </div>
-                        <div class="col-8 d-flex flex-column justify-content-evenly">
-                            <h3 class="text-white">Marvel Infinity War</h3>
-                            <div class="d-flex flex-wrap gap-2"><span class="rounded-pill bg-secondary px-2 text-white">action</span><span class="rounded-pill bg-secondary px-2 text-white">adventure</span><span class="rounded-pill bg-secondary px-2 text-white">sci-fi</span><span class="rounded-pill bg-secondary px-2 text-white">fantasy</span></div>
-                            <strong class="text-white">Year: 2018 | Director: Anthony Russo and Joe Russo</strong>
-                            <div class="d-flex gap-3 align-items-center">
-                                <button class="px-3 btn btn-danger rounded">Details</button>
-                                <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
-                                <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
-                                <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="p-2 rounded-3" style="background-color: #334456;">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://m.media-amazon.com/images/I/71eHZFw+GlL._AC_UF894,1000_QL80_.jpg" class="rounded" width="100%">
-                        </div>
-                        <div class="col-8 d-flex flex-column justify-content-evenly">
-                            <h3 class="text-white">Marvel Infinity War</h3>
-                            <div class="d-flex flex-wrap gap-2"><span class="rounded-pill bg-secondary px-2 text-white">action</span><span class="rounded-pill bg-secondary px-2 text-white">adventure</span><span class="rounded-pill bg-secondary px-2 text-white">sci-fi</span><span class="rounded-pill bg-secondary px-2 text-white">fantasy</span></div>
-                            <strong class="text-white">Year: 2018 | Director: Anthony Russo and Joe Russo</strong>
-                            <div class="d-flex gap-3 align-items-center">
-                                <button class="px-3 btn btn-danger rounded">Details</button>
-                                <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
-                                <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
-                                <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="p-2 rounded-3" style="background-color: #334456;">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="https://m.media-amazon.com/images/I/71eHZFw+GlL._AC_UF894,1000_QL80_.jpg" class="rounded" width="100%">
-                        </div>
-                        <div class="col-8 d-flex flex-column justify-content-evenly">
-                            <h3 class="text-white">Marvel Infinity War</h3>
-                            <div class="d-flex flex-wrap gap-2"><span class="rounded-pill bg-secondary px-2 text-white">action</span><span class="rounded-pill bg-secondary px-2 text-white">adventure</span><span class="rounded-pill bg-secondary px-2 text-white">sci-fi</span><span class="rounded-pill bg-secondary px-2 text-white">fantasy</span></div>
-                            <strong class="text-white">Year: 2018 | Director: Anthony Russo and Joe Russo</strong>
-                            <div class="d-flex gap-3 align-items-center">
-                                <button class="px-3 btn btn-danger rounded">Details</button>
-                                <button class="px-3 btn btn-secondary rounded">Watch Trailer</button>
-                                <i class="px-3 text-secondary fs-5 fa-solid fa-share-nodes"></i>
-                                <i class="px-3 text-secondary fs-5 fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <% }) %>
         </div>
     </div>
 </body>
