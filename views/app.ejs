@@ -14,8 +14,14 @@
     <span class="d-flex justify-content-center mt-4 fs-1 fw-bold"><span class="text-white">Cine</span><span
             class="text-warning">Flow</span></span>
     <p class="text-center text-warning">Discovery Portal</p>
-
     <div class="container">
+        <form action="/" class="my-3">
+            <div class="d-flex align-items-center gap-2">
+
+                <input type="text" class="form-control " placeholder="Search Here ...." name="search">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
         <div class="row g-3">
             <% data.map((item,index)=>{
                 %>

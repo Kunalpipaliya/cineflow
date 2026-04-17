@@ -13,9 +13,16 @@
             class="text-warning">Flow</span></span>
     <p class="text-center text-warning">Discovery Portal</p>
     <div class="container">
-        <div class="d-flex justify-content-end">
-            <a href="/admin/insertcard" class="btn btn btn-primary">add card</a>
+        <div class="d-flex justify-content-end my-3">
+            <a href="/admin/insertcard" class="btn btn btn-primary"><strong>+</strong> Add Card</a>
         </div>
+        <form action="/admin" class="my-3">
+           <div class="d-flex align-items-center gap-2">
+
+               <input type="text" class="form-control " placeholder="Search Here ...." name="search">
+               <button class="btn btn-primary" type="submit">Search</button>
+           </div>
+       </form>
         <div class="row g-3">
             <% data.map((item,index)=>{
                 %>
